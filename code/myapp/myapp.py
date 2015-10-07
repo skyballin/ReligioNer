@@ -144,5 +144,5 @@ def text_similarity():
     return render_template('text_similarity.html', data = [output_orig, output0, output1, output2, output3, output4, output5])
 
 if __name__ == "__main__":
-    app.run(host = '0.0.0.0', port=80, debug=False)
+    app.run(host = '0.0.0.0', port=80, debug=True)
 
