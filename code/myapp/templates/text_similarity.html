@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>ReligioNer Text Similarity</title>
+    <!--
+    <style>
+            html { 
+              background: url(../static/img/bluesky.jpg) no-repeat center center fixed; 
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-size: cover;
+            }
+    </style>
+    -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="../static/css/jumbotron.css" rel="stylesheet">
+ 
+ 
+</head>
+ 
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">ReligioNer</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Text Similarity</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/examples">Examples</a></li>
+            <li><a href="/graph">Graph</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+    </nav>
+
+    {% for i in range(7) %}
+        <div class="jumbotron">
+            <font size="4">
+            {{ data[i] | safe }}
+            </font>
+
+        </div>
+    {% endfor %}
+     <!--    <div class="jumbotron">
+            <font size="4">
+            {{ data[1] | safe }} 
+            </font>
+
+        </div>
+        <div class="jumbotron">
+            <font size="4">
+            {{ data[2] | safe }} 
+            </font>
+
+        </div>
+        <div class="jumbotron">
+            <font size="4">
+            {{ data[3] | safe }}  
+            </font>
+
+        </div>
+        <div class="jumbotron">
+            <font size="4">
+            {{ data[4] | safe }}  
+            </font>
+
+        </div>
+
+        <div class="jumbotron">
+            <font size="4">
+            {{ data[5] | safe }}  
+            </font>
+        </div> -->
+
+        <div class="row marketing">
+            
+                <center>
+
+                <a href= '/'>BACK</a>
+                
+                </center>
+
+        </div>
+ 
+        <footer class="footer">
+            <p>&copy; SkyBallin 2015</p>
+        </footer>
+ 
+    </div>
+</body>
+ 
+</html>
