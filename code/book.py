@@ -2,7 +2,10 @@ import pandas as pd
 import numpy as np
 from nltk.stem.wordnet import WordNetLemmatizer
 import re
-import cPickle as pickle 
+try:
+    import cPickle as pickle 
+except:
+    import pickle
 
 class Book():
     def __init__(self, name, filepath):
@@ -21,15 +24,15 @@ class Book():
         self.df = self.df.ix[indices]
         self.df = self.df.reset_index()
         self.df = self.df.drop('index', axis = 1)
-        print self.name, "parsing beginning"
+        print(self.name, "parsing beginning")
         lmtzr = WordNetLemmatizer()
         for i, text in enumerate(self.df['Original Text']):
             clean = self.clean_string(text.lower())
             clean_lemma = lmtzr.lemmatize(clean)
             self.df['Formatted Text'][i] = clean_lemma
             if i%100 == 0:
-                print i
-        print self.name, "parsing complete"
+                print(i)
+        print(self.name, "parsing complete")
 
     def clean_string(self, input_str):
         input_str = "".join(input_str)
@@ -44,29 +47,29 @@ if __name__ == "__main__":
     gita = Book('Gita', '../data/Gita/bhagavadgita.txt')
     with open('../data/gita.pkl', 'wb') as f:
         pickle.dump(gita, f)
-    print "gita pickle complete"
+    print("gita pickle complete")
 
     koran = Book('Koran', '../data/Koran/koran_text.txt')
     with open('../data/koran.pkl', 'wb') as f:
         pickle.dump(koran, f)
-    print "koran pickle complete"
+    print("koran pickle complete")
 
     torah = Book('Torah', '../data/Old Testament/oldtestament.txt')
     with open('../data/torah.pkl', 'wb') as f:
         pickle.dump(torah, f)
-    print "gita pickle complete"
+    print("gita pickle complete")
 
     newtestament = Book('New Testament', '../data/New Testament/newtestament.txt')
     with open('../data/newtestament.pkl', 'wb') as f:
         pickle.dump(newtestament, f)
-    print "newtestament pickle complete"
+    print("newtestament pickle complete")
 
     sutras = Book('Buddhist Sutras', '../data/Buddhism/sutras.txt')
     with open('../data/sutras.pkl', 'wb') as f:
         pickle.dump(sutras, f)
-    print "sutras pickle complete"
+    print("sutras pickle complete")
 
     mormon = Book('Book Of Mormon', '../data/Mormon/BookOfMormon.txt')
     with open('../data/mormon.pkl', 'wb') as f:
         pickle.dump(mormon, f)
-    print "mormon pickle complete"
+    print("mormon pickle complete")
