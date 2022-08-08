@@ -4,7 +4,9 @@ from bs4 import BeautifulSoup
 
 
 def get_bible():
-
+    """
+    Routine to get the new testament saved into format
+    """
     bible_source = "https://www.gutenberg.org/files/10/10-h/10-h.htm"
     r = requests.get(bible_source)
     soup = BeautifulSoup(r.content, "html5lib")
@@ -26,6 +28,11 @@ def get_bible():
 
     verses = [" ".join(i.split(" ")[1:]) for i in verses]
 
-    bible = pd.DataFrame(zip(chapter_num, verse_num, verses), columns=["chapter_num", "verse_num", "verse"])
-    bible.to_csv("../data/Christianity/Bible/New_Testament/newtestament.csv", index=False)
+    bible = pd.DataFrame(
+        zip(chapter_num, verse_num, verses),
+        columns=["chapter_num", "verse_num", "verse"],
+    )
+    bible.to_csv(
+        "../data/Christianity/Bible/New_Testament/newtestament.csv", index=False
+    )
     return bible
