@@ -4,7 +4,7 @@ from nltk.stem.wordnet import WordNetLemmatizer
 import re
 try:
     import cPickle as pickle 
-except:
+except ImportError:
     import pickle
 
 class Book():
